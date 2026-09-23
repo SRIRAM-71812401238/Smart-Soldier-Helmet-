@@ -1,0 +1,1 @@
+FIREBASE_URL = "https://smart-soldier-helmet-default-rtdb.firebaseio.com"
