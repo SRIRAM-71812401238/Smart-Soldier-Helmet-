@@ -144,326 +144,35 @@ def calculate_distance(
 st.markdown(
     """
 <style>
-
-.stApp {
-
-    background:
-    radial-gradient(
-        circle at top right,
-        #1b2418,
-        #0b0f0c 45%,
-        #050705
-    );
-
-}
-
-.block-container {
-
-    max-width: 1500px;
-
-    padding-top: 25px;
-
-    padding-bottom: 40px;
-
-}
-
-
-/* HEADER */
-
-.command-header {
-
-    background:
-    linear-gradient(
-        135deg,
-        #111811,
-        #1a2117
-    );
-
-    border: 1px solid #3e4d32;
-
-    border-left: 6px solid #aebd72;
-
-    border-radius: 12px;
-
-    padding: 25px 30px;
-
-    margin-bottom: 25px;
-
-    box-shadow:
-    0 0 25px
-    rgba(120,140,70,0.12);
-
-}
-
-
-.command-title {
-
-    font-family: monospace;
-
-    font-size: 34px;
-
-    font-weight: 900;
-
-    color: #c7d36f;
-
-    letter-spacing: 3px;
-
-}
-
-
-.command-subtitle {
-
-    font-family: monospace;
-
-    font-size: 13px;
-
-    color: #9aa88d;
-
-    letter-spacing: 2px;
-
-    margin-top: 8px;
-
-}
-
-
-.command-status {
-
-    font-family: monospace;
-
-    font-size: 12px;
-
-    color: #8faf69;
-
-    letter-spacing: 1px;
-
-    margin-top: 15px;
-
-}
-
-
-/* SECTION */
-
-.section-title {
-
-    font-family: monospace;
-
-    font-size: 17px;
-
-    font-weight: 800;
-
-    color: #b9c87b;
-
-    letter-spacing: 2px;
-
-    border-left: 4px solid #8e9f58;
-
-    padding-left: 10px;
-
-    margin-top: 12px;
-
-    margin-bottom: 16px;
-
-}
-
-
-/* METRICS */
-
-[data-testid="stMetric"] {
-
-    background:
-    linear-gradient(
-        145deg,
-        #151c15,
-        #101610
-    );
-
-    border: 1px solid #37442f;
-
-    border-radius: 12px;
-
-    padding: 18px;
-
-    min-height: 110px;
-
-    box-shadow:
-    0 5px 18px
-    rgba(0,0,0,0.25);
-
-}
-
-
-[data-testid="stMetricLabel"] {
-
-    color: #8f9d85 !important;
-
-    font-family: monospace;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-}
-
-
-[data-testid="stMetricValue"] {
-
-    color: #dce6d7 !important;
-
-    font-family: monospace;
-
-    font-weight: 800;
-
-}
-
-
-/* NORMAL */
-
-.normal-box {
-
-    background: #102016;
-
-    border: 1px solid #3c7048;
-
-    border-radius: 12px;
-
-    padding: 22px;
-
-    color: #a7dca5;
-
-    font-family: monospace;
-
-}
-
-
-/* WARNING */
-
-.warning-box {
-
-    background: #211e0e;
-
-    border: 1px solid #8b7a35;
-
-    border-radius: 12px;
-
-    padding: 22px;
-
-    color: #e0cf75;
-
-    font-family: monospace;
-
-}
-
-
-/* CRITICAL */
-
-.critical-box {
-
-    background: #250f0f;
-
-    border: 1px solid #8b3c3c;
-
-    border-radius: 12px;
-
-    padding: 22px;
-
-    color: #ff9999;
-
-    font-family: monospace;
-
-}
-
-
-/* INFORMATION */
-
-.info-box {
-
-    background: #111917;
-
-    border: 1px solid #35463d;
-
-    border-radius: 12px;
-
-    padding: 20px;
-
-    color: #aebbb0;
-
-    font-family: monospace;
-
-    min-height: 150px;
-
-}
-
-
-/* TACTICAL CARD */
-
-.tactical-card {
-
-    background:
-    linear-gradient(
-        145deg,
-        #131a13,
-        #0e130e
-    );
-
-    border: 1px solid #34402e;
-
-    border-radius: 12px;
-
-    padding: 22px;
-
-    min-height: 130px;
-
-}
-
-
-.card-title {
-
-    font-family: monospace;
-
-    color: #89977e;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.card-value {
-
-    font-family: monospace;
-
-    color: #c7d36f;
-
-    font-size: 25px;
-
-    font-weight: 900;
-
-    margin-top: 12px;
-
-}
-
-
-/* FOOTER */
-
-.footer {
-
-    text-align: center;
-
-    color: #596451;
-
-    font-family: monospace;
-
-    font-size: 11px;
-
-    margin-top: 35px;
-
-    padding: 18px;
-
-    border-top: 1px solid #293328;
-
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Share+Tech+Mono&display=swap');
+:root{--army:#a6b85b;--bright:#c7d879;--line:#465637;--text:#e5eadc}
+.stApp{background:radial-gradient(ellipse at 12% 0%,rgba(111,132,61,.18),transparent 34%),radial-gradient(ellipse at 90% 18%,rgba(67,86,42,.16),transparent 30%),linear-gradient(145deg,#090d08 0%,#11170f 48%,#080b07 100%);color:var(--text)}
+.block-container{max-width:1600px;padding-top:1.7rem;padding-bottom:3rem}
+[data-testid="stHeader"]{background:transparent}
+p,label,.stMarkdown{color:var(--text)}
+.command-header{position:relative;overflow:hidden;background:linear-gradient(110deg,rgba(35,47,27,.98),rgba(14,20,13,.98));border:1px solid #596d3b;border-left:7px solid var(--army);border-radius:5px;padding:27px 32px;margin-bottom:26px;box-shadow:0 12px 35px rgba(0,0,0,.38),inset 0 0 35px rgba(142,164,75,.05)}
+.command-header:after{content:"FIELD OPERATIONS  /  SECURE NETWORK";position:absolute;right:24px;bottom:17px;color:rgba(199,216,121,.42);font:11px 'Share Tech Mono',monospace;letter-spacing:2px}
+.command-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(30px,4vw,46px);font-weight:900;color:var(--bright);letter-spacing:3px;text-transform:uppercase;text-shadow:0 0 18px rgba(166,184,91,.2)}
+.command-subtitle{font-family:'Share Tech Mono',monospace;font-size:12px;color:#c0c9ad;letter-spacing:2px;margin-top:5px}
+.command-status{font-family:'Share Tech Mono',monospace;font-size:11px;color:#a9c777;letter-spacing:1.5px;margin-top:16px}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:800;color:var(--bright);letter-spacing:2px;text-transform:uppercase;border-left:4px solid var(--army);padding:3px 0 3px 12px;margin:14px 0 17px}
+[data-testid="stMetric"]{background:linear-gradient(145deg,#20291b,#141b12);border:1px solid var(--line);border-top:2px solid #71864a;border-radius:5px;padding:17px 18px;min-height:112px;box-shadow:0 7px 20px rgba(0,0,0,.24)}
+[data-testid="stMetricLabel"]{color:#aab69a!important;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+[data-testid="stMetricValue"]{color:#e4edcf!important;font-family:'Barlow Condensed',sans-serif;font-weight:800;letter-spacing:.5px}
+.normal-box,.warning-box,.critical-box,.info-box{border-radius:5px;padding:20px 22px;font-family:'Share Tech Mono',monospace;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.normal-box{background:linear-gradient(100deg,#14251a,#101a13);border:1px solid #4c8051;border-left:5px solid #79b66d;color:#b9e2ad}
+.warning-box{background:linear-gradient(100deg,#2b2713,#1b1a10);border:1px solid #927b3c;border-left:5px solid #d4b64f;color:#eadb91}
+.critical-box{background:linear-gradient(100deg,#301616,#1d1010);border:1px solid #9b4545;border-left:5px solid #e15e52;color:#ffb1a9}
+.info-box{background:linear-gradient(145deg,#20291f,#141b15);border:1px solid #465844;border-left:4px solid #71864a;color:#c0cbb9;min-height:150px}
+.tactical-card{background:linear-gradient(145deg,rgba(34,44,29,.98),rgba(17,23,15,.98));border:1px solid #4b5c39;border-top:2px solid #71864a;border-radius:5px;padding:22px;min-height:138px;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.card-title{font-family:'Share Tech Mono',monospace;color:#aab798;font-size:11px;letter-spacing:2px}
+.card-value{font-family:'Barlow Condensed',sans-serif;color:var(--bright);font-size:31px;font-weight:800;letter-spacing:1px;margin-top:11px}
+.footer{text-align:center;color:#82906e;font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:1.5px;margin-top:36px;padding:20px;border-top:1px solid #35432c}
+hr{border-color:#34422b!important}
+[data-testid="stMap"]{border:1px solid #566a3c;border-radius:5px;overflow:hidden}
+.stButton>button{background:#45572e;color:#f0f4e4;border:1px solid #829653;border-radius:3px;font-family:'Share Tech Mono',monospace;letter-spacing:1px}
+.stButton>button:hover{background:#62783d;color:white;border-color:#c0d17a}
+.stAlert{border-radius:4px;border:1px solid #687b48}
 </style>
 """,
     unsafe_allow_html=True
@@ -480,7 +189,7 @@ st.markdown(
     '🪖 SMART SOLDIER HELMET'
     '</div>'
     '<div class="command-subtitle">'
-    'AI-ENABLED TACTICAL MONITORING & COMMAND CENTER'
+    'AI-ENABLED SOLDIER SAFETY  |  TACTICAL COMMAND DASHBOARD'
     '</div>'
     '<div class="command-status">'
     '● SYSTEM ONLINE &nbsp; | &nbsp; '
@@ -1302,7 +1011,7 @@ st.markdown(
 
 st.markdown(
     '<div class="footer">'
-    '🪖 AI-ENABLED SMART SOLDIER HELMET'
+    ' AI-ENABLED SMART SOLDIER HELMET'
     ' &nbsp;|&nbsp; '
     'TACTICAL MONITORING SYSTEM'
     ' &nbsp;|&nbsp; '
